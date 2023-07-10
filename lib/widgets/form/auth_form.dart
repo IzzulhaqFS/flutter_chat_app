@@ -79,7 +79,7 @@ class _AuthFormState extends State<AuthForm> {
                     textCapitalization: TextCapitalization.none,
                     enableSuggestions: false,
                     validator: (value) {
-                      if (value!.isEmpty || value.contains('@')) {
+                      if (value!.isEmpty || !value.contains('@')) {
                         return 'Please enter a valid email address.';
                       }
                       return null;
