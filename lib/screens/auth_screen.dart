@@ -20,8 +20,8 @@ class _AuthScreenState extends State<AuthScreen> {
 
   void _submitAuthForm(
     String email,
-    String name,
     String password,
+    String name,
     File? image,
     bool isLogin,
     BuildContext context,
@@ -41,7 +41,7 @@ class _AuthScreenState extends State<AuthScreen> {
         final ref = FirebaseStorage.instance
             .ref()
             .child('user_image')
-            .child(authResult.user!.uid + '.jpg');
+            .child('${authResult.user!.uid}.jpg');
 
         await ref.putFile(image!);
 
@@ -61,7 +61,7 @@ class _AuthScreenState extends State<AuthScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(msg),
-          backgroundColor: Theme.of(context).errorColor,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
       setState(() {

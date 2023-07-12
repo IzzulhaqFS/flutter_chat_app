@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       builder: (context, snapshot) {
         return MaterialApp(
           title: 'Flutter Demo',
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: Colors.brown,
             backgroundColor: Colors.grey,
